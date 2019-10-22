@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>首页</title>
+</head>
+<body>
+<div>
+    <h3>当前登录用户：<span th:text="${CurrentUser.UserName}"></span></h3>
+</div>
+<div>
+    <button id="btn">退出登录</button>
+</div>
+</body>
+</html>
+<script src="/static/jquery-2.1.1.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#btn").on("click", function () {
+            $.ajax({
+                url: "/account/logout",
+                data: {},
+                success: function () {
+                    window.location.reload();
+                },
+                error: function () {
+					
+                }
+            });
+        });
+    });
+</script>

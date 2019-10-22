@@ -1,0 +1,39 @@
+# spring相关配置
+spring:
+  application:
+    name: test
+  thymeleaf:
+    cache: false
+    enabled: true
+    encoding: UTF-8
+    mode: LEGACYHTML5
+    prefix: classpath:/templates/
+    servlet:
+      content-type: text/html
+    suffix: .html
+# 服务端口
+server:
+  port: 8081
+  servlet:
+    session:
+      persistent: false
+# 鉴权配置
+sso-config:
+  connectionStrings:
+    test: ""
+  logging:
+    logLevel:
+      defaultLevel: Warning
+  application:
+    appId: c60ae74d26724333
+    appName: 测试项目
+    logType: ElasticsearchLogger
+    esLogUrl: http://219.142.70.162:9211/log/sysAsync/
+    receiveUrl: http://127.0.0.1:8081/account/receive
+  allowedHosts: "*"
+  sso:
+    loginUrl: http://219.142.70.162:9212/account/login
+    validUrl: http://219.142.70.162:9212/account/checklogin
+    logoutUrl: http://219.142.70.162:9212/account/logout
+    getAuthUrl: http://219.142.70.162:9212/account/auth
+    tokenName: SSOTOKEN
